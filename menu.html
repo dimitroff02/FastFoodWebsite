@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бургери - Smash It!</title>
+    <link rel="icon" type="image/png" href="SmashBurger.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="SmashBurger.png" alt="Smash Burger Logo" style="height:48px; vertical-align:middle; display:inline-block;">
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#home">Начало</a></li>
+                <li><a href="index.html#about">За нас</a></li>
+                <li><a href="index.html#gallery">Галерия</a></li>
+            </ul>
+
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <button class="nav-call-btn-mobile" id="navCallBtnMobile" title="Обадете се">
+                    📞
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Нашите бургери</h1>
+            <p>Открийте всички наши вкусни smash бургери</p>
+        </div>
+    </section>
+
+    <!-- Full Menu Section -->
+    <section class="full-menu-section">
+        <div class="container">
+            <!-- Burgers Category -->
+            <div class="menu-category">
+                <h2 class="category-title">Бургери</h2>
+                <div class="menu-grid">
+                    <!-- Burger Template 1 -->
+                    <div class="menu-item-full">
+                        <div class="menu-item-img">
+                            <img src="SmashBurger.png" alt="Classic Smash Burger">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Classic Smash Burger</h3>
+                            <p class="description">Нашият класически smash burger със свежа маруля, домати, лук и специален сос.</p>
+                            <div class="ingredients">
+                                <strong>Съставки:</strong> 100% телешко месо, свежа маруля, домати, лук, специален сос, бял хляб
+                            </div>
+                            <div class="allergens">
+                                <strong>Алергени:</strong> Глутен, лактоза
+                            </div>
+                            <div class="price">12.99 лв.</div>
+                        </div>
+                    </div>
+
+                    <!-- Burger Template 2 -->
+                    <div class="menu-item-full">
+                        <div class="menu-item-img">
+                            <img src="SmashBurger.png" alt="Bacon Deluxe">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Bacon Deluxe</h3>
+                            <p class="description">Хрупкава бекон, разтопено сирене и всички класически гарнитури, които обичате.</p>
+                            <div class="ingredients">
+                                <strong>Съставки:</strong> 100% телешко месо, бекон, сирене, свежа маруля, домати, лук, специален сос, бял хляб
+                            </div>
+                            <div class="allergens">
+                                <strong>Алергени:</strong> Глутен, лактоза
+                            </div>
+                            <div class="price">15.99 лв.</div>
+                        </div>
+                    </div>
+
+                    <!-- Burger Template 3 -->
+                    <div class="menu-item-full">
+                        <div class="menu-item-img">
+                            <img src="SmashBurger.png" alt="Spicy Jalapeño">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Spicy Jalapeño</h3>
+                            <p class="description">Свежи халапеньо, сирене pepper jack и нашият пикантен сос за любителите на острото.</p>
+                            <div class="ingredients">
+                                <strong>Съставки:</strong> 100% телешко месо, халапеньо, pepper jack сирене, свежа маруля, домати, лук, пикантен сос, бял хляб
+                            </div>
+                            <div class="allergens">
+                                <strong>Алергени:</strong> Глутен, лактоза
+                            </div>
+                            <div class="price">14.99 лв.</div>
+                        </div>
+                    </div>
+
+                    <!-- Add more burger templates here -->
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+            <div class="footer-social" style="min-width: 180px;">
+                <div style="font-weight: 600;">Последвайте ни</div>
+                <div>
+                    <a href="https://www.instagram.com/smashburgervarna/" target="_blank" title="Instagram">
+                        <img src="instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/smashburgervarna" target="_blank" title="Facebook">
+                        <img src="Facebook.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+            <div style="text-align:center; flex:1;">
+                <h3>Smash Burger</h3>               
+                <p>&copy; 2025 Smash Burger. All rights reserved.</p>
+            </div>
+            <div class="footer-address" style="min-width: 180px; text-align:right;">
+                <div style="font-weight: 600; margin-bottom: 0.5rem;">Къде да ни намерите?</div>
+                <div>Обект 1: <a href="https://www.google.com/maps/search/?api=1&query=ул.+Цанко+Дюстабанов+6,+Варна" target="_blank" rel="noopener">ул. „Цанко Дюстабанов" 6, Варна</a></div>
+                <div>Обект 2: <a href="https://www.google.com/maps/search/?api=1&query=ул.+Брегалница+52,+Варна" target="_blank" rel="noopener">ул. „Брегалница" 52, Варна</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="call-btn" id="callBtn" title="Обадете се">
+        📞 Поръчайте онлайн
+    </button>
+
+    <!-- Модален прозорец за телефони -->
+    <div id="callModal" class="call-modal" style="display:none;">
+        <div class="call-modal-content">
+            <span class="close-modal" id="closeCallModal">&times;</span>
+            <h3>Поръчайте по телефон:</h3>
+            <p><b>Брегалница:</b> <a href="tel:0886224220">088 622 4220</a></p>
+            <p><b>Техникумите:</b> <a href="tel:0886220227">088 622 0227</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
