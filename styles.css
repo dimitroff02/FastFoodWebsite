@@ -98,7 +98,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23f8f9fa"/><circle cx="200" cy="200" r="50" fill="%23ff6b35" opacity="0.3"/><circle cx="1000" cy="600" r="80" fill="%23ff6b35" opacity="0.2"/><circle cx="800" cy="150" r="30" fill="%23ff6b35" opacity="0.4"/></svg>');
+                url('main.png'); /* Тук добавяш своята картинка за главната страница */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -444,7 +444,7 @@ body {
 /* Menu Page Styles */
 .menu-header {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect width="1200" height="400" fill="%23f8f9fa"/><circle cx="200" cy="100" r="30" fill="%23ff6b35" opacity="0.3"/><circle cx="1000" cy="300" r="50" fill="%23ff6b35" opacity="0.2"/><circle cx="800" cy="80" r="20" fill="%23ff6b35" opacity="0.4"/></svg>');
+                url('menu.png'); /* Тук добавяш своята картинка */
     background-size: cover;
     background-position: center;
     padding: 8rem 2rem 4rem 2rem;
