@@ -6,9 +6,15 @@ function closeMobileMenu() {
     if (navMenu) navMenu.classList.remove('active');
 }
 
+function toggleMobileMenu() {
+    if (navMenu) navMenu.classList.toggle('active');
+}
+
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMobileMenu();
     });
 
     // Close mobile menu when clicking on a link
@@ -16,6 +22,13 @@ if (hamburger && navMenu) {
         link.addEventListener('click', () => {
             closeMobileMenu();
         });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            closeMobileMenu();
+        }
     });
 }
 

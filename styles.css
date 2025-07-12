@@ -338,6 +338,107 @@ body {
     .section-title {
         font-size: 2rem;
     }
+
+    .nav-menu .nav-cta {
+        margin: 1.2rem 0 0 0;
+        width: 80vw;
+        max-width: 320px;
+        text-align: center;
+        font-size: 1.1rem;
+        background: #ff6b35;
+        color: #fff;
+        padding: 0.6rem 1.4rem;
+        border-radius: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
+        display: inline-block;
+    }
+    .nav-menu .nav-cta:hover {
+        background: #fff;
+        color: #ff6b35;
+        border: 2px solid #ff6b35;
+    }
+    .nav-order-mobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.2rem;
+    }
+    .nav-order-mobile .cta-button {
+        width: 80vw;
+        max-width: 320px;
+        text-align: center;
+        font-size: 1.1rem;
+        background: #ff6b35;
+        color: #fff;
+        padding: 0.6rem 1.4rem;
+        border-radius: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        transition: background 0.2s, color 0.2s;
+        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
+        display: inline-block;
+    }
+    .nav-order-mobile .cta-button:hover {
+        background: #fff;
+        color: #ff6b35;
+        border: 2px solid #ff6b35;
+    }
+    .call-btn {
+        display: none !important;
+    }
+    .nav-call-btn-mobile {
+        display: inline-block;
+        background: #ff6b35;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        padding: 0.5rem 1.1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .nav-call-btn-mobile:hover {
+        background: #fff;
+        color: #ff6b35;
+        border: 2px solid #ff6b35;
+    }
+
+    .footer .container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.2rem;
+        text-align: center !important;
+    }
+    .footer .container > div {
+        min-width: unset !important;
+        width: 100%;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0.2rem 0;
+    }
+    .footer-social, .footer-address {
+        min-width: unset !important;
+        width: 100%;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+    .footer .container h3, .footer .container p, .footer .container div {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .footer-social > div:last-child {
+        justify-content: center !important;
+    }
 }
 
 /* Scroll indicator */
@@ -607,85 +708,7 @@ body {
     border: 2px solid #ff6b35;
 }
 
-/* Мобилна версия: бутонът е централно разположен и видим */
-@media (max-width: 768px) {
-    .nav-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .nav-menu .nav-cta {
-        margin: 1.2rem 0 0 0;
-        width: 80vw;
-        max-width: 320px;
-        text-align: center;
-        font-size: 1.1rem;
-        background: #ff6b35;
-        color: #fff;
-        padding: 0.6rem 1.4rem;
-        border-radius: 50px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: none;
-        transition: background 0.2s, color 0.2s;
-        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
-        display: inline-block;
-    }
-    .nav-menu .nav-cta:hover {
-        background: #fff;
-        color: #ff6b35;
-        border: 2px solid #ff6b35;
-    }
-    .nav-order-mobile {
-        display: flex;
-        justify-content: center;
-        margin-top: 1.2rem;
-    }
-    .nav-order-mobile .cta-button {
-        width: 80vw;
-        max-width: 320px;
-        text-align: center;
-        font-size: 1.1rem;
-        background: #ff6b35;
-        color: #fff;
-        padding: 0.6rem 1.4rem;
-        border-radius: 50px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: none;
-        transition: background 0.2s, color 0.2s;
-        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
-        display: inline-block;
-    }
-    .nav-order-mobile .cta-button:hover {
-        background: #fff;
-        color: #ff6b35;
-        border: 2px solid #ff6b35;
-    }
-    .call-btn {
-        display: none !important;
-    }
-    .nav-call-btn-mobile {
-        display: inline-block;
-        background: #ff6b35;
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        padding: 0.5rem 1.1rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        box-shadow: 0 2px 8px rgba(255,107,53,0.10);
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    .nav-call-btn-mobile:hover {
-        background: #fff;
-        color: #ff6b35;
-        border: 2px solid #ff6b35;
-    }
-}
+
 @media (min-width: 769px) {
     .nav-order-mobile {
         display: none !important;
@@ -719,33 +742,4 @@ body {
     }
 } 
 
-@media (max-width: 768px) {
-    .footer .container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 1.2rem;
-        text-align: center !important;
-    }
-    .footer .container > div {
-        min-width: unset !important;
-        width: 100%;
-        text-align: center !important;
-        margin: 0 !important;
-        padding: 0.2rem 0;
-    }
-    .footer-social, .footer-address {
-        min-width: unset !important;
-        width: 100%;
-        text-align: center !important;
-        margin: 0 !important;
-    }
-    .footer .container h3, .footer .container p, .footer .container div {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .footer-social > div:last-child {
-        justify-content: center !important;
-    }
-} 
+ 
