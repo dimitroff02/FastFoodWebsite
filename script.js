@@ -2,15 +2,28 @@
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
+function closeMobileMenu() {
+    if (navMenu) navMenu.classList.remove('active');
+}
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+}
+
+// Автоматично затваряне на менюто при resize към десктоп
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
+    }
 });
 
 // Smooth scrolling for navigation links
@@ -146,3 +159,11 @@ window.addEventListener('scroll', updateCallButtonPosition);
 
 // Извикваме функцията веднъж при зареждане на страницата
 document.addEventListener('DOMContentLoaded', updateCallButtonPosition); 
+
+// Добавям слушател за бутона до hamburger менюто на мобилна версия
+const navCallBtnMobile = document.getElementById('navCallBtnMobile');
+if (navCallBtnMobile && callModal) {
+    navCallBtnMobile.addEventListener('click', function() {
+        callModal.style.display = 'flex';
+    });
+} 
