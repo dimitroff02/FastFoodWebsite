@@ -180,3 +180,138 @@ if (navCallBtnMobile && callModal) {
         callModal.style.display = 'flex';
     });
 } 
+
+// --- Static Reviews Slider ---
+
+document.addEventListener("DOMContentLoaded", function() {
+    reviewsData = [
+        {
+            author_name: "Виктор Тинев",
+            rating: 5,
+            text: "Отлични бургери и най-вече лично отношение.",
+            profile_photo: "ViktorTinev.png"
+        },
+        {
+            author_name: "MAP MASTER",
+            rating: 5,
+            text: "Най-добрите бургери които сме яли някога, дори и в столицата! Каквото и да си вземете няма да съжалите!",
+            profile_photo: "MapMaster.png"
+        },
+        {
+            author_name: "Valentin",
+            rating: 5,
+            text: "Безспорно най-добрите бургери в града. Месото идва прясно без да е замразявано, което нямя да срещнете на много места. Явно малкото негативни коментари са на дребничка конкуренция. 🤫",
+            profile_photo: "Valentin.png"
+        },
+        {
+            author_name: "Irinka Georgieva",
+            rating: 5,
+            text: "Перфектни! Работа с прецизност! Изключителни продукти! Вкус! Изтънченост!    Бързо обслужване. Препоръчвам! Не пропускайте да опитате тези вкусотии!",
+            profile_photo: "Irinka.png"
+        },
+        {
+            author_name: "Mark-Aleks Evtimov",
+            rating: 5,
+            text: "Бързо, вкусно, любезно, на добри цени.",
+            profile_photo: "MarkAleks.png"
+        }
+    ];
+    renderReviewsSlider();
+    window.addEventListener('resize', handleResizeReviewsSlider);
+});
+
+let reviewsData = [];
+let currentIndex = 0;
+let isAnimating = false;
+let visibleCount = getVisibleReviewsCount();
+
+function getVisibleReviewsCount() {
+    if (window.innerWidth <= 700) return 1;
+    if (window.innerWidth <= 1000) return 2;
+    return 3;
+}
+
+function handleResizeReviewsSlider() {
+    const newCount = getVisibleReviewsCount();
+    if (newCount !== visibleCount) {
+        visibleCount = newCount;
+        // Ако currentIndex е извън обхвата, го коригираме
+        if (currentIndex > reviewsData.length - visibleCount) {
+            currentIndex = Math.max(0, reviewsData.length - visibleCount);
+        }
+        renderReviewsSlider();
+    }
+}
+
+function renderReviewsSlider(direction) {
+    const container = document.getElementById('google-reviews');
+    if (!container) return;
+    if (!reviewsData.length) {
+        container.innerHTML = '<div>Няма ревюта.</div>';
+        return;
+    }
+    visibleCount = getVisibleReviewsCount();
+    let visible = reviewsData.slice(currentIndex, currentIndex + visibleCount);
+    if (visible.length < visibleCount) {
+        visible = reviewsData.slice(-visibleCount);
+        currentIndex = reviewsData.length - visibleCount;
+    }
+    // Анимация: fade-out, после fade-in
+    if (direction) {
+        isAnimating = true;
+        container.querySelectorAll('.review').forEach(el => el.classList.add('fade-out'));
+        setTimeout(() => {
+            container.innerHTML = visible.map(r => `
+                <div class="review fade-in">
+                    <div class="review-header">
+                        <img class="review-avatar" src="${r.profile_photo || 'SmashBurger.png'}" alt="Профилна снимка">
+                        <div class="author">${r.author_name}</div>
+                    </div>
+                    <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                    <div class="text">${r.text}</div>
+                </div>
+            `).join('');
+            setTimeout(() => {
+                container.querySelectorAll('.review').forEach(el => el.classList.remove('fade-in'));
+                isAnimating = false;
+            }, 300);
+        }, 250);
+    } else {
+        container.innerHTML = visible.map(r => `
+            <div class="review">
+                <div class="review-header">
+                    <img class="review-avatar" src="${r.profile_photo || 'SmashBurger.png'}" alt="Профилна снимка">
+                    <div class="author">${r.author_name}</div>
+                </div>
+                <div class="rating">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                <div class="text">${r.text}</div>
+            </div>
+        `).join('');
+    }
+    const prevBtn = document.getElementById('reviewsPrev');
+    const nextBtn = document.getElementById('reviewsNext');
+    if (prevBtn) prevBtn.disabled = currentIndex === 0;
+    if (nextBtn) nextBtn.disabled = currentIndex >= reviewsData.length - visibleCount;
+}
+
+const prevBtn = document.getElementById('reviewsPrev');
+const nextBtn = document.getElementById('reviewsNext');
+if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0 && !isAnimating) {
+            visibleCount = getVisibleReviewsCount();
+            currentIndex = Math.max(0, currentIndex - visibleCount);
+            renderReviewsSlider('left');
+        }
+    });
+}
+if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+        visibleCount = getVisibleReviewsCount();
+        if (currentIndex < reviewsData.length - visibleCount && !isAnimating) {
+            currentIndex = Math.min(reviewsData.length - visibleCount, currentIndex + visibleCount);
+            renderReviewsSlider('right');
+        }
+    });
+}
+// --- Край на Static Reviews Slider --- 
