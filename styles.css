@@ -976,6 +976,9 @@ body {
     .reviews-slider {
         width: 300px;
     }
+    .slider-arrow {
+        display: none !important;
+    }
 } 
 
 .review-header {

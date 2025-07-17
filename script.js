@@ -315,3 +315,43 @@ if (nextBtn) {
     });
 }
 // --- Край на Static Reviews Slider --- 
+
+// --- Swipe support for reviews on touch devices ---
+(function() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50; // px
+    const reviewsSlider = document.getElementById('google-reviews');
+    if (reviewsSlider) {
+        reviewsSlider.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+            }
+        });
+        reviewsSlider.addEventListener('touchmove', function(e) {
+            if (e.touches.length === 1) {
+                touchEndX = e.touches[0].clientX;
+            }
+        });
+        reviewsSlider.addEventListener('touchend', function(e) {
+            const dx = touchEndX - touchStartX;
+            if (Math.abs(dx) > minSwipeDistance) {
+                if (dx < 0) {
+                    // swipe left -> next
+                    if (currentIndex < reviewsData.length - getVisibleReviewsCount() && !isAnimating) {
+                        currentIndex = Math.min(reviewsData.length - getVisibleReviewsCount(), currentIndex + getVisibleReviewsCount());
+                        renderReviewsSlider('right');
+                    }
+                } else {
+                    // swipe right -> prev
+                    if (currentIndex > 0 && !isAnimating) {
+                        currentIndex = Math.max(0, currentIndex - getVisibleReviewsCount());
+                        renderReviewsSlider('left');
+                    }
+                }
+            }
+            touchStartX = 0;
+            touchEndX = 0;
+        });
+    }
+})(); 
