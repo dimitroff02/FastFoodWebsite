@@ -738,9 +738,9 @@ body {
     position: fixed;
     bottom: 32px;
     right: 32px;
-    background: #ff6b35;
-    color: #fff;
-    border: none;
+    background: #fff;
+    color: #ff6b35;
+    border: 2px solid #ff6b35;
     border-radius: 50px;
     padding: 16px 28px;
     font-size: 1.1rem;
@@ -748,10 +748,34 @@ body {
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     cursor: pointer;
     z-index: 1001;
-    transition: background 0.2s;
+    transition: all 0.2s;
+}
+
+/* На десктоп показваме само иконата */
+@media (min-width: 769px) {
+    .call-btn {
+        padding: 16px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    .call-btn span {
+        display: none;
+    }
+    
+    .call-btn::before {
+        content: "📞";
+        font-size: 1.5rem;
+    }
 }
 .call-btn:hover {
-    background: #f7931e;
+    background: #ff6b35;
+    color: #fff;
 }
 
 /* Модален прозорец за телефони */
