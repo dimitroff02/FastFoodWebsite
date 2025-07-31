@@ -247,66 +247,150 @@ body {
 
 /* Footer */
 .footer {
-    background: #333;
+    background: #2a2a2a;
     color: white;
-    text-align: center;
-    padding: 2rem;
+    padding: 3rem 0 1rem 0;
 }
 
-.footer-social {
-    text-align: center;
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
-.footer-social > div:first-child {
+/* Brand Section */
+.footer-brand .brand-name {
+    color: #ff6b35;
+    font-size: 1.8rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
-.footer-social > div:last-child {
+.footer-brand .brand-tagline {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* Footer Sections */
+.footer-section h4 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6b35;
+}
+
+/* Contact Info */
+.contact-info {
     display: flex;
-    justify-content: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.footer-social a {
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #ff6b35;
+    font-size: 1rem;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
     display: inline-block;
-    width: 32px;
-    height: 32px;
-
 }
 
-.footer-social img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-}
-
-.footer-social a:hover {
+.social-link:hover {
     transform: scale(1.1);
 }
 
-.footer-address {
-    text-align: center;
+.social-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+    transition: color 0.3s ease;
 }
 
-.footer-address a {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: underline;
-    transition: color 0.2s;
+.social-link:hover .social-icon {
+    color: #ff6b35;
 }
-.footer-address a:hover {
+
+/* Footer Divider */
+.footer-divider {
+    height: 1px;
+    background: #444;
+    margin: 2rem 0 1rem 0;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #999;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.separator {
+    color: #666;
+}
+
+.privacy-link {
+    color: #999;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: #ff6b35;
+}
+
+/* Location Links */
+.location-link {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.location-link:hover {
     color: #ff6b35;
     text-decoration: underline;
-}
-
-.footer-copyright {
-    font-size: 0.92rem;
-    color: #888;
-    margin: 1.2rem 0 0.2rem 0;
-    text-align: center;
-    letter-spacing: 0.02em;
-    width: 100%;
-    display: block;
 }
 
 /* Responsive Design */
@@ -421,33 +505,32 @@ body {
         border: 2px solid #ff6b35;
     }
 
-    .footer .container {
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 1.2rem;
-        text-align: center !important;
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
     }
-    .footer .container > div {
-        min-width: unset !important;
-        width: 100%;
-        text-align: center !important;
-        margin: 0 !important;
-        padding: 0.2rem 0;
+    
+    .footer-brand {
+        text-align: center;
     }
-    .footer-social, .footer-address {
-        min-width: unset !important;
-        width: 100%;
-        text-align: center !important;
-        margin: 0 !important;
+    
+    .footer-section {
+        text-align: center;
     }
-    .footer .container h3, .footer .container p, .footer .container div {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+    
+    .contact-info {
+        align-items: center;
     }
-    .footer-social > div:last-child {
-        justify-content: center !important;
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-copyright {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
     }
 }
 
